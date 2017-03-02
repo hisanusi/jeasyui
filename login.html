@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Basic CRUD Application - jQuery EasyUI CRUD Demo</title>
+	    <link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+	    <link rel="stylesheet" type="text/css" href="themes/icon.css">
+	    <!--link rel="stylesheet" type="text/css" href="themes/color.css">
+	    <link rel="stylesheet" type="text/css" href="/demo/demo.css"-->
+	    <script type="text/javascript" src="js/jquery.min.js"></script>
+	    <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	</head>
+	<body>
+		<div class="container" style="margin:10% auto;width:400px">
+		    <div class="easyui-panel" style="width:100%;padding:30px 60px;">
+		        <form id="ff" class="easyui-form" method="post" data-options="novalidate:true">
+		            <div style="margin-bottom:20px">
+		                <input class="easyui-textbox" prompt="some@email.com" name="email" style="width:100%" data-options="label:'Email:',required:true,validType:'email'">
+		            </div>
+		            <div style="margin-bottom:20px">
+		                <input class="easyui-passwordbox" prompt="Your Password" name="Password" style="width:100%" data-options="label:'Password:',required:true">
+		            </div>
+		        </form>
+		        <div style="text-align:center;padding:5px 0">
+		            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()" style="width:80px">Masuk</a>
+		            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()" style="width:80px">Cancel</a>
+		        </div>
+		    </div>
+		</div>
+	    <script>
+	        function submitForm(){
+	            $('#ff').form('submit',{
+	                onSubmit:function(){
+	                    return $(this).form('enableValidation').form('validate');
+	                }
+	            });
+	        }
+	        function clearForm(){
+	            $('#ff').form('clear');
+	        }
+	    </script>
+	</body>
+</html>
